@@ -1,9 +1,9 @@
 <?php
 
-namespace Pustaka;
+namespace Agungdh;
 
-class Hello {
-	function say($sentence = "Hello, World!") {
+class Pustaka {
+	function helloWorld($sentence = "Hello, World!") {
 		echo $sentence;
 	}
 }
