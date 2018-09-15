@@ -1,5 +1,5 @@
 <?php 
-namespace agungdh\pustaka;
+namespace agungdh;
 
 class Pustaka {
 	// echo rupiah(100000);
