@@ -1,11 +1,10 @@
-<?php
+<?php 
+namespace agungdh\pustaka;
 
-namespace Agungdh;
-
-class Pustaka {
-	function helloWorld($sentence = "Hello, World!") {
-		echo $sentence;
-	}
+class Hello
+{
+    public function say($toSay = "Nothing given")
+    {
+        return $toSay;
+    }
 }
-
-?>
