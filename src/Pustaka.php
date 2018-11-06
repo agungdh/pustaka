@@ -2,6 +2,11 @@
 namespace agungdh;
 
 class Pustaka {
+	public function parseTanggalIndo($tanggal)
+	{
+		return date_format(date_create($tanggal),"Y-m-d");
+	}
+
 	// echo rupiah(100000);
 	// echo rupiah(100000.20);
 	// echo rupiah(100000, false);
