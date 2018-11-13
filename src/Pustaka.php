@@ -2,6 +2,31 @@
 namespace agungdh;
 
 class Pustaka {
+	public function arrangeForSelectCollective($raw, $params)
+    {
+        $selectValue = $params[0];
+        
+        unset($params[0]);
+        $params = array_values($params);
+
+        $datas = [];
+        
+        foreach ($raw as $value) {
+            $display = '';
+            foreach ($params as $forDisplay) {
+                if (strpos($forDisplay, '__') !== false) {
+                    $toDisplay = str_replace('__', '', $forDisplay);
+                    $display .= $value->$toDisplay;
+                } else {
+                    $display .= $forDisplay;
+                }
+            }
+            $datas[$value->$selectValue] = $display;
+        }
+
+        return $datas;
+    }
+
 	public function parseTanggalIndo($tanggal)
 	{
 		return date_format(date_create($tanggal),"Y-m-d");
