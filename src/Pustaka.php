@@ -2,7 +2,7 @@
 namespace agungdh;
 
 class Pustaka {
-	public function static arrangeForSelectCollective($raw, $params)
+	public static function arrangeForSelectCollective($raw, $params)
     {
         $selectValue = $params[0];
         
@@ -27,7 +27,7 @@ class Pustaka {
         return $datas;
     }
 
-	public function static parseTanggalIndo($tanggal)
+	public static function parseTanggalIndo($tanggal)
 	{
 		return date_format(date_create($tanggal),"Y-m-d");
 	}
@@ -40,7 +40,7 @@ class Pustaka {
 	// echo rupiah(100000.20, false, false);
 	// echo rupiah(100000, false, true);
 	// echo rupiah(100000.20, false, true);
-	public function static rupiah($angka, $rp = true, $koma = true) {
+	public static function rupiah($angka, $rp = true, $koma = true) {
 		if ($koma == true) {
 			$dua = 2;
 		} else {
@@ -57,17 +57,17 @@ class Pustaka {
 	}
 
 	// echo tanggalIndo(date('Y-m-d'));
-	public function static tanggalIndo($tanggal) {
+	public static function tanggalIndo($tanggal) {
 		return date("d-m-Y", strtotime($tanggal));
 	}	
 
 	// echo tanggalWaktuIndo(date('Y-m-d H:i:s'));
-	public function static tanggalWaktuIndo($tanggalWaktu) {
+	public static function tanggalWaktuIndo($tanggalWaktu) {
 		return date("d-m-Y H:i:s", strtotime($tanggalWaktu));
 	}	
 
 	// echo tanggalIndoString(date('Y-m-d'));
-	public function static tanggalIndoString($tanggal){
+	public static function tanggalIndoString($tanggal){
 		$bulan = array (
 			1 =>   'Januari',
 			'Februari',
@@ -88,7 +88,7 @@ class Pustaka {
 	}
 	
 	// echo tanggalIndoStringBulanTahun(date('m-Y'));
-	public function static tanggalIndoStringBulanTahun($bulanTahun){
+	public static function tanggalIndoStringBulanTahun($bulanTahun){
 		$bulan = array (
 			1 =>   'Januari',
 			'Februari',
@@ -109,7 +109,7 @@ class Pustaka {
 	}
 
 	// echo tanggalWaktuIndoString(date('Y-m-d H:i:s'));
-	public function static tanggalWaktuIndoString($tanggalWaktu){
+	public static function tanggalWaktuIndoString($tanggalWaktu){
 		$bulan = array (
 			1 =>   'Januari',
 			'Februari',
