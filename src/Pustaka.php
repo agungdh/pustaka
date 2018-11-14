@@ -32,14 +32,6 @@ class Pustaka {
 		return date_format(date_create($tanggal),"Y-m-d");
 	}
 
-	// echo rupiah(100000);
-	// echo rupiah(100000.20);
-	// echo rupiah(100000, false);
-	// echo rupiah(100000.20, false);
-	// echo rupiah(100000, false, false);
-	// echo rupiah(100000.20, false, false);
-	// echo rupiah(100000, false, true);
-	// echo rupiah(100000.20, false, true);
 	public static function rupiah($angka, $rp = true, $koma = true) {
 		if ($koma == true) {
 			$dua = 2;
@@ -56,17 +48,14 @@ class Pustaka {
 		return $hasil_rupiah;
 	}
 
-	// echo tanggalIndo(date('Y-m-d'));
 	public static function tanggalIndo($tanggal) {
 		return date("d-m-Y", strtotime($tanggal));
 	}	
 
-	// echo tanggalWaktuIndo(date('Y-m-d H:i:s'));
 	public static function tanggalWaktuIndo($tanggalWaktu) {
 		return date("d-m-Y H:i:s", strtotime($tanggalWaktu));
 	}	
 
-	// echo tanggalIndoString(date('Y-m-d'));
 	public static function tanggalIndoString($tanggal){
 		$bulan = array (
 			1 =>   'Januari',
@@ -87,7 +76,6 @@ class Pustaka {
 		return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
 	}
 	
-	// echo tanggalIndoStringBulanTahun(date('m-Y'));
 	public static function tanggalIndoStringBulanTahun($bulanTahun){
 		$bulan = array (
 			1 =>   'Januari',
@@ -108,7 +96,6 @@ class Pustaka {
 		return $bulan[ (int)$pecahkan[0] ] . ' ' . $pecahkan[1];
 	}
 
-	// echo tanggalWaktuIndoString(date('Y-m-d H:i:s'));
 	public static function tanggalWaktuIndoString($tanggalWaktu){
 		$bulan = array (
 			1 =>   'Januari',
