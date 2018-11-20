@@ -2,6 +2,33 @@
 namespace agungdh;
 
 class Pustaka {
+	public static function dropTableView($host, $user, $pass, $db)
+	{
+		$mysqli = new \mysqli($host, $user, $pass, $db);
+		
+		$mysqli->query('SET foreign_key_checks = 0');
+
+		if ($tables = $mysqli->query("SHOW FULL TABLES IN " . $db . " WHERE TABLE_TYPE LIKE 'BASE TABLE'"))
+		{
+		    while($row = $tables->fetch_array(MYSQLI_NUM))
+		    {
+		        $mysqli->query('DROP TABLE IF EXISTS '.$row[0]);
+		    }
+		}
+
+		if ($views = $mysqli->query("SHOW FULL TABLES IN " . $db . " WHERE TABLE_TYPE LIKE 'VIEW'"))
+		{
+		    while($row = $views->fetch_array(MYSQLI_NUM))
+		    {
+		        $mysqli->query('DROP VIEW IF EXISTS '.$row[0]);
+		    }
+		}
+
+		$mysqli->query('SET foreign_key_checks = 1');
+		
+		$mysqli->close();
+	}
+	
 	public static function arrangeForSelectCollective($raw, $params)
     {
         $selectValue = $params[0];
