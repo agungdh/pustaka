@@ -2,6 +2,13 @@
 namespace agungdh;
 
 class Pustaka {
+	public static function decimalRand($iMin, $iMax, $fSteps = 0.5)
+	{
+	    $a = range($iMin, $iMax, $fSteps);
+
+	    return $a[mt_rand(0, count($a)-1)];
+	}
+	
 	public static function dropTableView($host, $user, $pass, $db)
 	{
 		$mysqli = new \mysqli($host, $user, $pass, $db);
