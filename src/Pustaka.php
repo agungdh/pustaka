@@ -152,36 +152,36 @@ class Pustaka {
 		return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0] . ' ' . $waktu;
 	}
 
-	public static function terbulang($nilai) {
+	public static function terbilang($nilai) {
 		$nilai = abs($nilai);
 		$huruf = array("", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas");
 		$temp = "";
 		if ($nilai < 12) {
 			$temp = " ". $huruf[$nilai];
 		} else if ($nilai <20) {
-			$temp = penyebut($nilai - 10). " belas";
+			$temp = self::terbilang($nilai - 10). " belas";
 		} else if ($nilai < 100) {
-			$temp = penyebut($nilai/10)." puluh". penyebut($nilai % 10);
+			$temp = self::terbilang($nilai/10)." puluh". self::terbilang($nilai % 10);
 		} else if ($nilai < 200) {
-			$temp = " seratus" . penyebut($nilai - 100);
+			$temp = " seratus" . self::terbilang($nilai - 100);
 		} else if ($nilai < 1000) {
-			$temp = penyebut($nilai/100) . " ratus" . penyebut($nilai % 100);
+			$temp = self::terbilang($nilai/100) . " ratus" . self::terbilang($nilai % 100);
 		} else if ($nilai < 2000) {
-			$temp = " seribu" . penyebut($nilai - 1000);
+			$temp = " seribu" . self::terbilang($nilai - 1000);
 		} else if ($nilai < 1000000) {
-			$temp = penyebut($nilai/1000) . " ribu" . penyebut($nilai % 1000);
+			$temp = self::terbilang($nilai/1000) . " ribu" . self::terbilang($nilai % 1000);
 		} else if ($nilai < 1000000000) {
-			$temp = penyebut($nilai/1000000) . " juta" . penyebut($nilai % 1000000);
+			$temp = self::terbilang($nilai/1000000) . " juta" . self::terbilang($nilai % 1000000);
 		} else if ($nilai < 1000000000000) {
-			$temp = penyebut($nilai/1000000000) . " milyar" . penyebut(fmod($nilai,1000000000));
+			$temp = self::terbilang($nilai/1000000000) . " milyar" . self::terbilang(fmod($nilai,1000000000));
 		} else if ($nilai < 1000000000000000) {
-			$temp = penyebut($nilai/1000000000000) . " trilyun" . penyebut(fmod($nilai,1000000000000));
+			$temp = self::terbilang($nilai/1000000000000) . " trilyun" . self::terbilang(fmod($nilai,1000000000000));
 		}     
 
 		if($nilai<0) {
-			return "minus ". trim($temp;);
+			return "minus ". ($temp);
 		} else {
-			return trim($temp;);
+			return ($temp);
 		}  
 	} 
 }
