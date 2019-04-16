@@ -90,6 +90,11 @@ class Pustaka {
 		return date_format(date_create($tanggal),"Y-m-d");
 	}
 
+	public static function parseTanggalWaktuIndo($tanggalWaktu)
+	{
+		return date_format(date_create($tanggalWaktu),"Y-m-d H:i:s");
+	}
+
 	public static function rupiah($angka, $rp = true, $koma = true) {
 		if ($koma == true) {
 			$dua = 2;
