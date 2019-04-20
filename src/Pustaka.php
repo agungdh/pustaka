@@ -111,6 +111,10 @@ class Pustaka {
 		return $hasil_rupiah;
 	}
 
+	public static function ribuah($angka) {
+		return number_format($angka,0,',','.');
+	}
+
 	public static function tanggalIndo($tanggal) {
 		return date("d-m-Y", strtotime($tanggal));
 	}	
