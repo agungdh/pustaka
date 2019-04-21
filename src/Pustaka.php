@@ -111,7 +111,7 @@ class Pustaka {
 		return $hasil_rupiah;
 	}
 
-	public static function ribuah($angka) {
+	public static function ribuan($angka) {
 		return number_format($angka,0,',','.');
 	}
 
