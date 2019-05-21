@@ -2,6 +2,25 @@
 namespace agungdh;
 
 class Pustaka {
+	public static function convertJamMenitKeMenitExploded($jam, $menit)
+	{
+		$totalMenit = 0;
+
+		$totalMenit += $jam * 60;
+		$totalMenit += $menit;
+
+		return $totalMenit;
+	}
+
+	public static function convertJamMenitKeMenit($string)
+	{
+		$jamMenit = explode(":", $string);
+		$jam = $jamMenit[0];
+		$menit = $jamMenit[1];
+
+		return self::convertJamMenitKeMenitExploded($jam, $menit);
+	}
+	
 	public static function romawi($n){
 		$hasil = "";
 		$iromawi = ["","I","II","III","IV","V","VI","VII","VIII","IX","X",
