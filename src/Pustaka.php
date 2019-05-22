@@ -2,6 +2,15 @@
 namespace agungdh;
 
 class Pustaka {
+	public static function menitKeJamMenit($menit)
+	{
+		$parsed = new \stdClass();
+		$parsed->jam = (int) floor($menit / 60);
+		$parsed->menit = $menit % 60;
+
+		return $parsed;
+	}
+
 	public static function convertJamMenitKeMenitExploded($jam, $menit)
 	{
 		$totalMenit = 0;
