@@ -2,6 +2,26 @@
 namespace agungdh;
 
 class Pustaka {
+	public static function parsedMenitKeJamMenit($menit)
+	{
+		$jm = self::menitKeJamMenit($menit);
+		$durasiTerlambat = '';
+
+		if ($jm->jam != 0) {
+			$durasiTerlambat .= $jm->jam . " Jam";
+		}
+
+		if ($jm->jam != 0 && $jm->menit != 0) {
+			$durasiTerlambat .= " ";
+		}
+
+		if ($jm->menit != 0) {
+			$durasiTerlambat .= $jm->menit . " Menit";
+		}
+
+		return $durasiTerlambat;
+	}
+
 	public static function menitKeJamMenit($menit)
 	{
 		$parsed = new \stdClass();
