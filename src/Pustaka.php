@@ -2,6 +2,18 @@
 namespace agungdh;
 
 class Pustaka {
+	public static function random_color_part() {
+	    return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT);
+	}
+
+	public static function random_color() {
+	    return self::random_color_part() . self::random_color_part() . self::random_color_part();
+	}
+	
+	public static function random_html_color() {
+		return '#' . self::random_color();
+	}
+
 	public static function parsedMenitKeJamMenit($menit)
 	{
 		$jm = self::menitKeJamMenit($menit);
