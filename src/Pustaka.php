@@ -290,7 +290,7 @@ class Pustaka {
 	    }
 	    $i = 0;
 	    while($i < strlen($str)) {
-	        $c = strtoupper($str{$i}); 
+	        $c = strtoupper($str[$i]); 
 	        if(($c >= "A") && ($c <= 'Z')) {
 	            if((ord($c) + $offset) > ord("Z")) {
 	                $encrypted_text .= chr(ord($c) + $offset - 26);
@@ -313,7 +313,7 @@ class Pustaka {
 	    }
 	    $i = 0;
 	    while($i < strlen($str)) {
-	        $c = strtoupper($str{$i}); 
+	        $c = strtoupper($str[$i]); 
 	        if(($c >= "A") && ($c <= 'Z')) {
 	            if((ord($c) - $offset) < ord("A")) {
 	                $decrypted_text .= chr(ord($c) - $offset + 26);
